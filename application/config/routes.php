@@ -52,4 +52,4 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'products_control';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-
+$route['(:any)'] = 'views/$1';
