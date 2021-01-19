@@ -11,39 +11,6 @@
 </head>
 <body>
 
-	<style> body{ background: url(<?php echo base_url();?>assets/image/bghome.jpg);
-								background-size:100%;
-								background-repeat: no-repeat;
-								width: 100%; }
-
-
-
-	</style>
-	<?php
-	if (isset($this->session->userdata['logged_in'])) { ?>
-  								<div class = "bb2">
-									<a href="<?php echo base_url(); ?>index.php/products_control/showcpu" class="btn btn-outline-dark">Show Product</a>
-									<br><a type=button  class="btn btn-outline-dark" href="<?php echo base_url(); ?>index.php/products_control/register">Sign Up</a>
-								</div>
-  					<?php } else { ?>
-  							<div class = "bb2">
-								<a href="<?php echo base_url(); ?>index.php/products_control/login" class="btn btn-outline-light">Login Admin</a>
-							</div>
-  					<?php } ?>
-	
-	<center>
-	
-		<div class = "bb1">
-		<a href="<?php echo base_url(); ?>index.php/products_control/question1">
-
-				<img src="<?php echo base_url();?>assets/image/b1.png" 
-							onmouseover="this.src='<?php echo base_url();?>assets/image/b22.png'"
-							onmouseout="this.src='<?php echo base_url();?>assets/image/b1.png'"
-							onmousedown="this.src='<?php echo base_url();?>assets/image/b3.png'"
-							border="0" alt="" ></a>
-
-			</a>
-		</div>
 
 
 </body>
