@@ -225,7 +225,13 @@ switch (ENVIRONMENT)
  */
 	// The name of THIS file
 	define('SELF', pathinfo(__FILE__, PATHINFO_BASENAME));
+	$output = $system_path;
+	$output = str_replace("\\","/",$output);
+    if (is_array($output))
+        $output = implode(',', $output);
 
+    
+	echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
 	// Path to the system directory
 	define('BASEPATH', $system_path);
 
