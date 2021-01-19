@@ -320,9 +320,15 @@ switch (ENVIRONMENT)
 		echo 'Your view folder path does not appear to be set correctly. Please open the following file and correct this: '.SELF;
 		exit(3); // EXIT_CONFIG
 	}
+	$output = $view_folder.DIRECTORY_SEPARATOR;
+	$output = str_replace("\\","/",$output);
+    if (is_array($output))
+        $output = implode(',', $output);
 
+    
+	echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
 	define('VIEWPATH', $view_folder.DIRECTORY_SEPARATOR);
-
+	
 /*
  * --------------------------------------------------------------------
  * LOAD THE BOOTSTRAP FILE
@@ -330,4 +336,11 @@ switch (ENVIRONMENT)
  *
  * And away we go...
  */
+	$output = BASEPATH.'core/CodeIgniter.php';
+	$output = str_replace("\\","/",$output);
+    if (is_array($output))
+        $output = implode(',', $output);
+
+    
+	echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
 require_once BASEPATH.'core/CodeIgniter.php';
