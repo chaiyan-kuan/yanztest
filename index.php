@@ -240,7 +240,13 @@ switch (ENVIRONMENT)
 
 	// Name of the "system" directory
 	define('SYSDIR', basename(BASEPATH));
+	$output = $application_folder;
+	$output = str_replace("\\","/",$output);
+    if (is_array($output))
+        $output = implode(',', $output);
 
+    
+	echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
 	// The path to the "application" directory
 	if (is_dir($application_folder))
 	{
@@ -273,7 +279,13 @@ switch (ENVIRONMENT)
 	}
 
 	define('APPPATH', $application_folder.DIRECTORY_SEPARATOR);
+	$output = APPPATH.'views';
+	$output = str_replace("\\","/",$output);
+    if (is_array($output))
+        $output = implode(',', $output);
 
+    
+	echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
 	// The path to the "views" directory
 	if ( ! isset($view_folder[0]) && is_dir(APPPATH.'views'.DIRECTORY_SEPARATOR))
 	{
